@@ -15,7 +15,19 @@ def speak(message=None, language='en-us', speed=175, pitch_adj=25,
     if message is None:
         message = 'You did not give me anyting to say'
 
-    os.system('echo "'+message+'" | festival --tts') 
+    from sys import platform as _platform
+    if _platform == "linux" or _platform == "linux2":
+        # linux
+        os.system('echo "' + str(message) + '" | festival --tts')
+
+    elif _platform == "darwin":
+        # OS X
+        os.system('say "' + str(message) + '"')
+
+    elif _platform == "win32":
+        # Windows...
+        print("Windows not supported")
+
 
 if __name__ == '__main__':
 
