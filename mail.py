@@ -1,13 +1,11 @@
-account = 'benderbotmail@gmail.com'
-password = 'cb101682'
-
 import imaplib
 import email
 import time
 from speak import speak
 from chuck_norris_jokes import say_chuck_norris_joke
 from cat_facts import say_cat_fact
-
+from robot_keys import account, password
+from weather import get_weather
 
 class mailmanager():
     def __init__(self, account, password):
@@ -53,6 +51,7 @@ class mailmanager():
         else:
             return original
 
+
 if __name__ == '__main__':
 
 
@@ -67,10 +66,13 @@ if __name__ == '__main__':
             elif 'Subject' in mail_contents:
                 chuck_norris_request = mail_contents['Subject'].lower().find('chuck norris') != -1
                 cat_fact_request = mail_contents['Subject'].lower().find('cat fact') != -1
+                weather_request = mail_contents['Subject'].lower().find('weather') != -1
                 if chuck_norris_request:
                     say_chuck_norris_joke()
                 elif cat_fact_request:
                     say_cat_fact()
+                elif weather_request:
+                    get_weather()
                 else:
                     speak(mail_contents.get_payload())
         else:

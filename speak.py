@@ -1,8 +1,10 @@
 import os
 import sys
+import six
 
-def speak(message=None, language='en-us', speed=175, pitch_adj=25,
-          capitals=40, word_gap='20ms', amplitude=180):
+from sys import platform as _platform
+
+def speak(message):
     """
     Use festival for text-to-speech translation
 
@@ -14,8 +16,12 @@ def speak(message=None, language='en-us', speed=175, pitch_adj=25,
     
     if message is None:
         message = 'You did not give me anyting to say'
+    else:
+        if not isinstance(message, six.string_types):
+            message = "Non text data"
 
-    from sys import platform as _platform
+
+
     if _platform == "linux" or _platform == "linux2":
         # linux
         os.system('echo "' + str(message) + '" | festival --tts')
@@ -28,6 +34,8 @@ def speak(message=None, language='en-us', speed=175, pitch_adj=25,
         # Windows...
         print("Windows not supported")
 
+def clean_text(text):
+    pass
 
 if __name__ == '__main__':
 

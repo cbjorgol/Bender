@@ -15,10 +15,7 @@ def say_cat_fact():
     chunk_size = 8
     num_chunks = len(split_fact) / float(chunk_size)
     for i in range(int(num_chunks)+1):
-        speak(" ".join(split_fact[i * chunk_size : (i + 1) * chunk_size]),
-              speed=120,
-              language='en-us+f2',
-              pitch_adj=10)
+        speak(" ".join(split_fact[i * chunk_size : (i + 1) * chunk_size]))
 
 if __name__ == '__main__':
     say_cat_fact()
