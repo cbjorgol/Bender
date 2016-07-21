@@ -6,6 +6,7 @@ from chuck_norris_jokes import say_chuck_norris_joke
 from cat_facts import say_cat_fact
 from robot_keys import account, password
 from weather import get_weather
+from test_body import run_forward
 
 class mailmanager():
     def __init__(self, account, password):
@@ -13,19 +14,6 @@ class mailmanager():
         self.mail.login(account, password)
 
     def check_mail(self):
-
-        # self.mail.list()
-        # self.mail.select('inbox')
-        # result, data = self.mail.search(None, "ALL")
-        #
-        # ids = data[0]
-        # id_list = ids.split()
-        # latest_email_id = id_list[-1]
-        #
-        # result, data = self.mail.fetch(latest_email_id, "(RFC822)")
-        # raw_email = data[0][1]
-        #
-        # return raw_email
 
         self.mail.list()
         self.mail.select('inbox')
@@ -43,7 +31,7 @@ class mailmanager():
                         original = email.message_from_string(response_part[1])
 
                         print original['From'], "Subject: ", original['Subject']
-                        print original.get_payload()
+                        print get_payload(original)
                         typ, data = self.mail.store(num, '+FLAGS', '\\Seen')
 
         if n == 0:
@@ -51,6 +39,16 @@ class mailmanager():
         else:
             return original
 
+def get_payload(original):
+    if len(original) > 1:
+        print "> 1"
+        print original.get_payload()
+        payload = original.get_payload()
+    else:
+        print "one len"
+        payload = original.get_payload()
+    print payload
+    return payload
 
 if __name__ == '__main__':
 
@@ -64,17 +62,23 @@ if __name__ == '__main__':
                 speak(mail_contents.get_payload())
 
             elif 'Subject' in mail_contents:
+                
                 chuck_norris_request = mail_contents['Subject'].lower().find('chuck norris') != -1
                 cat_fact_request = mail_contents['Subject'].lower().find('cat fact') != -1
                 weather_request = mail_contents['Subject'].lower().find('weather') != -1
+
                 if chuck_norris_request:
+                    run_forward(100, 5)
                     say_chuck_norris_joke()
+                    run_forward(-100, 7)
                 elif cat_fact_request:
                     say_cat_fact()
                 elif weather_request:
+                    run_forward(-100, 7)
                     get_weather()
+                    run_forward(100, 7)
                 else:
-                    speak(mail_contents.get_payload())
+                    speak(get_payload(mail_contents))
         else:
             print "no facts found"
         time.sleep(20)
