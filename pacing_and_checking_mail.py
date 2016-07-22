@@ -98,6 +98,7 @@ if __name__ == '__main__':
             BrickPi.MotorSpeed[PORT_B] = toggle_on * speed * 2
             BrickPi.MotorSpeed[PORT_A] = toggle_on * speed
             BrickPiUpdateValues()
+            print 'motors should be running now'
 
             #button_vals = np.append(button_vals, touch)
 
