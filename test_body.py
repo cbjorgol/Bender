@@ -1,13 +1,9 @@
-
-
 from BrickPi import *
 import time
 
 BrickPiSetup()  										# setup the serial port for communication
 ############################################
 # !  Set the sensor type on the line below.  
-BrickPi.SensorType[PORT_1] = TYPE_SENSOR_TOUCH   	#Set the type of sensor at PORT_1.  NXT Touch Sensor.
-BrickPi.SensorType[PORT_2] = TYPE_SENSOR_EV3_TOUCH_0  	#Set the type of sensor at PORT_2.  EV3 Touch sensor.
 
 
 
