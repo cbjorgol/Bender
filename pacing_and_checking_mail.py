@@ -75,7 +75,7 @@ if __name__ == '__main__':
         mail_status = subprocess.Popen(['python','mail.py'])
 
         BrickPiSetup()
-        BrickPi.SensorType[PORT_2] = TYPE_SENSOR_EV3_TOUCH_0
+        #BrickPi.SensorType[PORT_2] = TYPE_SENSOR_EV3_TOUCH_0
 
         BrickPi.MotorEnable[PORT_B] = 1 #Enable the Motor B
         BrickPi.MotorEnable[PORT_A] = 1 #Enable the Motor A
