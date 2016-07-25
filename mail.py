@@ -6,7 +6,6 @@ from chuck_norris_jokes import say_chuck_norris_joke
 from cat_facts import say_cat_fact
 from robot_keys import account, password
 from weather import get_weather
-from BrickPi import *
 import numpy as np
 import sys
 

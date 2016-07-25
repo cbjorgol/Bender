@@ -61,6 +61,11 @@ def interpret_button(number):
 		print "Bottom blue button pressed!"
 	else:
 		print "Something else was pressed!"
+
+def set_motor_speed(toggle_on, speed, diff):
+    BrickPi.MotorSpeed[PORT_B] = toggle_on * speed * diff
+    BrickPi.MotorSpeed[PORT_A] = toggle_on * speed
+    BrickPiUpdateValues()
 		
 
 if __name__ == '__main__':
@@ -71,48 +76,57 @@ if __name__ == '__main__':
 
     os.setpgrp()
     try:
+       assert 1 == 2
+    except:
 
+        np=str(raw_input()) 
+        print np
         mail_status = subprocess.Popen(['python','mail.py'])
 
         BrickPiSetup()
-        #BrickPi.SensorType[PORT_2] = TYPE_SENSOR_EV3_TOUCH_0
+        BrickPi.SensorType[PORT_2] = TYPE_SENSOR_TOUCH
 
         BrickPi.MotorEnable[PORT_B] = 1 #Enable the Motor B
         BrickPi.MotorEnable[PORT_A] = 1 #Enable the Motor A
         BrickPiSetupSensors()
 
-        BrickPi.Timeout=50000
-        BrickPiSetTimeout()
+        # BrickPi.Timeout=50000
+        # BrickPiSetTimeout()
 
-        speed = 150
+        speed = 120
 
         button_vals = np.array([])
-        toggle_on = False
+        toggle_on = True
         t0 = time.time()
 
 
         min_stream_len = sys.argv[1] if len(sys.argv) > 1 else 4
 
         while True:
+            
+            set_motor_speed(toggle_on, speed, 2)
+            # print 'motors should be running now'
 
-            BrickPi.MotorSpeed[PORT_B] = toggle_on * speed * 2
-            BrickPi.MotorSpeed[PORT_A] = toggle_on * speed
-            BrickPiUpdateValues()
-            print 'motors should be running now'
+            touch = BrickPi.Sensor[PORT_2]            
+            
+            button_vals = np.append(button_vals, touch)   
+            
+            if len(sys.argv) < 2:
+                min_stream_len = 35
+            else:
+                min_stream_len = int(sys.argv[1])
 
-            #button_vals = np.append(button_vals, touch)
+            if len(button_vals) > min_stream_len:
+                button_vals = button_vals[1:]
 
-            #if len(sys.argv) < 2:
-                #    min_stream_len = 3
-                #else:
-                #    min_stream_len = int(sys.argv[1])
-
-                #if len(button_vals) > min_stream_len:
-                #    button_vals = button_vals[1:]
-
-            #if min(button_vals) >= 1010 and len(button_vals) >= min_stream_len:
-                #    toggle_on = not toggle_on
-            #    button_vals = np.array([])
+            # print button_vals
+            if min(button_vals) == 1 and len(button_vals) >= min_stream_len:
+                toggle_on = not toggle_on
+                set_motor_speed(toggle_on, speed, 2)
+                button_vals = np.array([])
+                for i in range(100):
+                    BrickPiUpdateValues()
+                    time.sleep(0.015)
 
                 # infrared = BrickPi.Sensor[PORT_1]
                 # button_value = interpret_response(infrared)
@@ -127,8 +141,8 @@ if __name__ == '__main__':
                 #    on = 1 - on
 
 
-            BrickPiUpdateValues()
-            time.sleep(.05)
+            #BrickPiUpdateValues()
+            time.sleep(.001)
 
     finally:
         os.killpg(0, signal.SIGKILL)
