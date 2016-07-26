@@ -79,8 +79,8 @@ if __name__ == '__main__':
        assert 1 == 2
     except:
 
-        np=str(raw_input()) 
-        print np
+        # np=str(raw_input())
+        # print np
         mail_status = subprocess.Popen(['python','mail.py'])
 
         BrickPiSetup()
