@@ -1,0 +1,88 @@
+  190  vim mail.py
+  192  vim mail.py
+  194  vim mail.py
+  196  vim test_body.py
+  198  vim test_body.py
+  200  vim test_body.py
+  204  vim test_body.py
+  206  vim test_body.py
+  208  vim test_body.py
+  245  vim mail.py 
+  247  vim mail.py 
+  249  vim mail.py 
+  251  vim mail.py 
+  296  vim audio_to_headphones.sh 
+  298  vim audio_to_headphones.sh 
+  299  vim mail.py 
+  301  vim mail.py 
+  302  vim ~/.bashrc
+  304  vim ~/.bashrc
+  307  vim ~/.bashrc
+  310  vim mail.py 
+  311  vim ~/.bashrc
+  335  vim mail.py 
+  337  vim mail.py 
+  339  vim mail.py 
+  341  vim mail.py 
+  343  vim mail.py 
+  345  vim mail.py 
+  347  vim mail.py 
+  349  vim mail.py 
+  351  vim mail.py 
+  353  vim mail.py 
+  355  vim mail.py 
+  357  vim mail.py 
+  359  vim mail.py 
+  361  vim mail.py 
+  363  vim mail.py 
+  365  vim mail.py 
+  367  vim mail.py 
+  383  vim mail.py 
+  416  vim mail.py 
+  418  vim mail.py 
+  420  vim mail.py 
+  422  vim mail.py 
+  424  vim mail.py 
+  426  vim mail.py 
+  428  vim mail.py 
+  430  vim mail.py 
+  432  vim mail.py 
+  434  vim mail.py 
+  435  vim mail
+  436  vim mail.py
+  439  vim mail.py
+  441  vim mail.py
+  443  vim mail.py
+  445  vim mail.py
+  447  vim mail.py
+  449  vim mail.py
+  451  vim mail.py
+  453  vim mail.py
+  455  vim mail.py
+  457  vim mail.py
+  478  vim _test_loop.py
+  481  vim mail.py
+  482  vim _test_loop.py 
+  484  vim pacing_and_checking_mail.py 
+  486  vim pacing_and_checking_mail.py 
+  489  vim pacing_and_checking_mail.py 
+  499  vim pacing_and_checking_mail.py 
+  516  vim pacing_and_checking_mail.py 
+  579  vim /etc/modprobe.d/alsa-base.conf
+  581  vim /etc/modprobe.d/ipv6.conf 
+  582  vim /etc/modprobe.d/8192cu.conf 
+  583  vim /etc/asound.conf
+  591  vim ~/.asoundrc
+  592  vim /usr/share/alsa/alsa.conf
+  593  sudo vim /usr/share/alsa/alsa.conf
+  594  vim /lib/modprobe.d/aliases.conf 
+  595  sudo vim /lib/modprobe.d/aliases.conf 
+  596  vim ~/.asoundrc
+  603  sudo vim /usr/share/alsa/alsa.conf
+  604  history | grep vim
+  605  history | grep vim | sort
+  606  history | grep vim | sort uniq
+  607  history | grep vim | sort 0  uniq
+  608  history | grep vim >> sort   uniq
+  609  history | grep vim | uniq
+  610  history | grep vim > history_sound_mods_01.txt
