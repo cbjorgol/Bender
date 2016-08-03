@@ -1,0 +1,201 @@
+# history after installing cv2 successfully
+  607  brew uninstall python3.4
+  608  mv /usr/lib/arm-linux-gnueabihf/libpython3.4m.so /usr/lib/arm-linux-gnueabihf/libpython3.4m.so_testing
+  609  sudo mv /usr/lib/arm-linux-gnueabihf/libpython3.4m.so /usr/lib/arm-linux-gnueabihf/libpython3.4m.so_testing
+  610  cmake -D CMAKE_BUILD_TYPE=RELEASE     -D CMAKE_INSTALL_PREFIX=/usr/local     -D INSTALL_PYTHON_EXAMPLES=ON     -D OPENCV_EXTRA_MODULES_PATH=~/opencv_contrib-3.1.0/modules     -D BUILD_EXAMPLES=ON ..
+  611  cmake -D CMAKE_BUILD_TYPE=RELEASE     -D CMAKE_INSTALL_PREFIX=/usr/local     -D INSTALL_PYTHON_EXAMPLES=ON     -D OPENCV_EXTRA_MODULES_PATH=~/opencv_contrib-3.1.0/modules     -D BUILD_EXAMPLES=ON .. \ 
+  612  ls
+  613  ls /home/pi/opencv-3.1.0/build/
+  614  ls /usr/lib/arm-linux-gnueabihf/libpython2.7.so
+  615  ls /home/pi/.virtualenvs/cv2/local/lib/python2.7/site-packages
+  616  cmake -D CMAKE_BUILD_TYPE=RELEASE     -D CMAKE_INSTALL_PREFIX=/usr/local     -D INSTALL_PYTHON_EXAMPLES=ON     -D OPENCV_EXTRA_MODULES_PATH=~/opencv_contrib-3.1.0/modules     -D PYTHON_EXECUTABLE=/home/pi/.virtualenvs/cv/bin/python2.7     -D PYTHON_LIBRARY=/usr/lib/arm-linux-gnueabihf/libpython2.7.so        -D PYTHON_PACKAGES_PATH=/home/pi/.virtualenvs/cv2/local/lib/python2.7/site-packages \ 
+  617  cmake -D CMAKE_BUILD_TYPE=RELEASE     -D CMAKE_INSTALL_PREFIX=/usr/local     -D INSTALL_PYTHON_EXAMPLES=ON     -D OPENCV_EXTRA_MODULES_PATH=~/opencv_contrib-3.1.0/modules     -D PYTHON_EXECUTABLE=/home/pi/.virtualenvs/cv/bin/python2.7     -D PYTHON_LIBRARY=/usr/lib/arm-linux-gnueabihf/libpython2.7.so        -D PYTHON_PACKAGES_PATH=/home/pi/.virtualenvs/cv2/local/lib/python2.7/site-packages 
+  618  ls /home/pi/.virtualenvs/cv2/local/lib/python2.7/site-packages
+  619  cmake -D CMAKE_BUILD_TYPE=RELEASE     -D CMAKE_INSTALL_PREFIX=/usr/local     -D INSTALL_PYTHON_EXAMPLES=ON     -D OPENCV_EXTRA_MODULES_PATH=~/opencv_contrib-3.1.0/modules     -D PYTHON_EXECUTABLE=/home/pi/.virtualenvs/cv/bin/python2.7     -D PYTHON_LIBRARY=/usr/lib/arm-linux-gnueabihf/libpython2.7.so     -D PYTHON_PACKAGES_PATH=/home/pi/.virtualenvs/cv2/local/lib/python2.7/site-packages     -D BUILD_EXAMPLES=ON ..
+  620  sudo mv /usr/lib/arm-linux-gnueabihf/libpython3.4m.so /usr/lib/arm-linux-gnueabihf/libpython3.4m.so_test
+  621  cmake --help
+  622  sudo rm /usr/bin/python3.4
+  623  sudo rm /usr/lib/arm-linux-gnueabihf/libpython3.4m.so
+  624  sudo rm /usr/lib/arm-linux-gnueabihf/libpython3.4m.so_testing 
+  625  sudo rm /usr/lib/python3/dist-packages/numpy/core/include
+  626  sudo rm -r /usr/lib/python3/dist-packages/numpy/core/include
+  627  sudo rm -r lib/python3.4/site-packages
+  628  sudo rm -r /lib/python3.4/site-packages
+  629  sudo rm -r /usr/lib/python3.4/site-packages
+  630  ls
+  631  cmake -D CMAKE_BUILD_TYPE=RELEASE     -D CMAKE_INSTALL_PREFIX=/usr/local     -D INSTALL_PYTHON_EXAMPLES=ON     -D OPENCV_EXTRA_MODULES_PATH=~/opencv_contrib-3.1.0/modules     -D PYTHON_EXECUTABLE=/home/pi/.virtualenvs/cv/bin/python2.7     -D PYTHON_LIBRARY=/usr/lib/arm-linux-gnueabihf/libpython2.7.so     -D PYTHON_PACKAGES_PATH=/home/pi/.virtualenvs/cv2/local/lib/python2.7/site-packages     -D BUILD_EXAMPLES=ON ..
+  632  python
+  633  ls /usr/lib
+  634  sudo rm -r /usr/lib/python3.4
+  635  sudo rm -r /usr/lib/python3
+  636  cmake -D CMAKE_BUILD_TYPE=RELEASE     -D CMAKE_INSTALL_PREFIX=/usr/local     -D INSTALL_PYTHON_EXAMPLES=ON     -D OPENCV_EXTRA_MODULES_PATH=~/opencv_contrib-3.1.0/modules     -D PYTHON_EXECUTABLE=/home/pi/.virtualenvs/cv/bin/python2.7     -D PYTHON_LIBRARY=/usr/lib/arm-linux-gnueabihf/libpython2.7.so     -D PYTHON_PACKAGES_PATH=/home/pi/.virtualenvs/cv2/local/lib/python2.7/site-packages     -D BUILD_EXAMPLES=ON ..
+  637  sudo apt-get install python2.7-dev
+  638  ls /home/pi/.virtualenvs/cv2
+  639  ls /home/pi/.virtualenvs/cv2/bin
+  640  ls /home/pi/.virtualenvs/cv2/
+  641  ls /home/pi/.virtualenvs/cv2/lib
+  642  ls /home/pi/.virtualenvs/cv2/lib/python2.7/
+  643  ls /home/pi/.virtualenvs/cv2/lib/python2.7/site
+  644  ls /home/pi/.virtualenvs/cv2/lib/python2.7/site-packages/
+  645  cd ..
+  646  ls
+  647  ls -r | grep .so
+  648  cd /home/pi/.virtualenvs/cv2
+  649  ls -r | grep .so
+  650  cd ../..
+  651  ls
+  652  ls -r | grep .so
+  653  pwd
+  654  cmake -D CMAKE_BUILD_TYPE=RELEASE     -D CMAKE_INSTALL_PREFIX=/usr/local     -D INSTALL_PYTHON_EXAMPLES=ON     -D OPENCV_EXTRA_MODULES_PATH=~/opencv_contrib-3.1.0/modules     -D PYTHON_EXECUTABLE=/home/pi/.virtualenvs/cv2/bin/python2.7     -D PYTHON_LIBRARY=/usr/lib/arm-linux-gnueabihf/libpython2.7.so     -D PYTHON_PACKAGES_PATH=/home/pi/cv2.so     -D BUILD_EXAMPLES=ON ..
+  655  cmake -D CMAKE_BUILD_TYPE=RELEASE     -D CMAKE_INSTALL_PREFIX=/usr/local     -D INSTALL_PYTHON_EXAMPLES=ON     -D OPENCV_EXTRA_MODULES_PATH=~/opencv_contrib-3.1.0/modules     -D PYTHON_EXECUTABLE=/home/pi/.virtualenvs/cv2/bin/python2.7     -D PYTHON_LIBRARY=/usr/lib/arm-linux-gnueabihf/libpython2.7.so     -D PYTHON_PACKAGES_PATH=~/cv2.so     -D BUILD_EXAMPLES=ON ..
+  656  sudo shutdown
+  657  source ~/.profile
+  658  workon cv
+  659  cd 
+  660  ls
+  661  bender
+  662  ls
+  663  python speak.py "hi mark"
+  664  python test_cv2.py 
+  665  bash
+  666  workon cv
+  667  source ~/.profile
+  668  vim ~/.bashrc
+  669  vim ~/.profile
+  670  workon cv2
+  671  which python
+  672  python
+  673  ls
+  674  python
+  675  echo $PYTHONPATH
+  676  which python
+  677  export $PYTHONPATH='/home/pi/.virtualenvs/cv2/bin/python'
+  678  export PYTHONPATH='/home/pi/.virtualenvs/cv2/bin/python'
+  679  which python
+  680  echo $PYTHONPATH
+  681  which python
+  682  bender
+  683  python test_cv2.py 
+  684  vim test_cv2.py 
+  685  python test_cv2.py 
+  686  which cv2
+  687  pip freeze
+  688  python
+  689  which python
+  690  python import cv2
+  691  python 
+  692  cmake -D CMAKE_BUILD_TYPE=RELEASE     -D CMAKE_INSTALL_PREFIX=/usr/local     -D INSTALL_PYTHON_EXAMPLES=ON     -D OPENCV_EXTRA_MODULES_PATH=~/opencv_contrib-3.1.0/modules     -D PYTHON_EXECUTABLE=/home/pi/.virtualenvs/cv2/bin/python2.7     -D PYTHON_LIBRARY=/usr/lib/arm-linux-gnueabihf/libpython2.7.so     -D PYTHON_PACKAGES_PATH=/home/pi/cv2.so     -D BUILD_EXAMPLES=ON ..
+  693  cd ..
+  694  ls
+  695  cmake -D CMAKE_BUILD_TYPE=RELEASE     -D CMAKE_INSTALL_PREFIX=/usr/local     -D INSTALL_PYTHON_EXAMPLES=ON     -D OPENCV_EXTRA_MODULES_PATH=~/opencv_contrib-3.1.0/modules     -D PYTHON_EXECUTABLE=/home/pi/.virtualenvs/cv2/bin/python2.7     -D PYTHON_LIBRARY=/usr/lib/arm-linux-gnueabihf/libpython2.7.so     -D BUILD_EXAMPLES=ON ..
+  696  cd opencv-3.1.0/
+  697  cmake -D CMAKE_BUILD_TYPE=RELEASE     -D CMAKE_INSTALL_PREFIX=/usr/local     -D INSTALL_PYTHON_EXAMPLES=ON     -D OPENCV_EXTRA_MODULES_PATH=~/opencv_contrib-3.1.0/modules     -D PYTHON_EXECUTABLE=/home/pi/.virtualenvs/cv2/bin/python2.7     -D PYTHON_LIBRARY=/usr/lib/arm-linux-gnueabihf/libpython2.7.so     -D PYTHON_PACKAGES_PATH=/home/pi/cv2.so     -D BUILD_EXAMPLES=ON ..
+  698  ls
+  699  cd cmake
+  700  ls
+  701  cmake -D CMAKE_BUILD_TYPE=RELEASE     -D CMAKE_INSTALL_PREFIX=/usr/local     -D INSTALL_PYTHON_EXAMPLES=ON     -D OPENCV_EXTRA_MODULES_PATH=~/opencv_contrib-3.1.0/modules     -D PYTHON_EXECUTABLE=/home/pi/.virtualenvs/cv2/bin/python2.7     -D PYTHON_LIBRARY=/usr/lib/arm-linux-gnueabihf/libpython2.7.so     -D PYTHON_PACKAGES_PATH=/home/pi/cv2.so     -D BUILD_EXAMPLES=ON ..
+  702  history | tail -2
+  703  history | tail -3 | head -1 > ../../Bender/cmake_cmd.sh
+  704  echo "# Run the above command from (cv2) pi@dex:~/opencv-3.1.0/cmake" >> ../../Bender/cmake_cmd.sh 
+  705  cat ../../Bender/cmake_cmd.sh 
+  706  exit() ;
+  707  sudo pip install BrickPi
+  708  python import BrickPi
+  709  python
+  710  pip install BrickPi
+  711  top
+  712  source ~/.profile
+  713  workon cv2
+  714  bender
+  715  ls
+  716  python test_cv2.py 
+  717  python
+  718  cd ..
+  719  top
+  720  cd opencv-3.1.0/
+  721  ls
+  722  cd cmake
+  723  ls
+  724  cd ..
+  725  cd build
+  726  ls
+  727  sudo make install
+  728  python
+  729  cd ~/.virtualenvs/cv/lib/python2.7/site-packages/
+  730  ln -s /usr/local/lib/python2.7/site-packages/cv2.so cv2.so
+  731  ls
+  732  ls cv2.so
+  733  rm cv2.so
+  734  ln -s /usr/local/lib/python2.7/site-packages/cv2.so cv2.so
+  735  python
+  736  ls
+  737  ls cv2.so
+  738  ls -l cv2.so
+  739  rm cv2.so
+  740  ls
+  741  sudo make install
+  742  sudo ldconfig
+  743  python
+  744  cd ~/.virtualenvs/cv/lib/python2.7/site-packages/
+  745  python
+  746  ls
+  747  exit() exit;
+  748  exit
+  749  bender
+  750  source ~/.profile
+  751  workon cv2
+  752  python
+  753  cd ~/.virtualenvs/cv/lib/python3.2/site-packages/
+  754  cd ~/.virtualenvs/cv/lib/python2.7/site-packages/
+  755  ls
+  756  ls -l
+  757  ls /usr/local/lib/python2.7/site-packages/cv2.so
+  758  cd ~/opencv-3.1.0/
+  759  ls
+  760  cd build
+  761  ls
+  762  make clean
+  763  make install
+  764  home
+  765  top
+  766  home
+  767  bender
+  768  source ~/.profile
+  769  workon cv2
+  770  python
+  771  cd ~/opencv-3.1.0/build/
+  772  sudo ldconfig
+  773  ls -l /usr/local/lib/python2.7/site-packages/
+  774  ls -l /usr/local/lib/python3.4/site-packages/
+  775  make clean
+  776  cmake -D CMAKE_BUILD_TYPE=RELEASE     -D CMAKE_INSTALL_PREFIX=/usr/local     -D INSTALL_PYTHON_EXAMPLES=ON     -D OPENCV_EXTRA_MODULES_PATH=~/opencv_contrib-3.1.0/modules     -D PYTHON_EXECUTABLE=/home/pi/.virtualenvs/cv2/bin/python2.7     -D PYTHON_LIBRARY=/usr/lib/arm-linux-gnueabihf/libpython2.7.so     -D PYTHON_PACKAGES_PATH=/home/pi/cv2.so     -D BUILD_EXAMPLES=ON ..
+  777  cd ..
+  778  ls
+  779  cd cmake
+  780  cmake -D CMAKE_BUILD_TYPE=RELEASE     -D CMAKE_INSTALL_PREFIX=/usr/local     -D INSTALL_PYTHON_EXAMPLES=ON     -D OPENCV_EXTRA_MODULES_PATH=~/opencv_contrib-3.1.0/modules     -D PYTHON_EXECUTABLE=/home/pi/.virtualenvs/cv2/bin/python2.7     -D PYTHON_LIBRARY=/usr/lib/arm-linux-gnueabihf/libpython2.7.so     -D PYTHON_PACKAGES_PATH=/home/pi/cv2.so     -D BUILD_EXAMPLES=ON ..
+  781* ls /home/pi/opencv-3.1.0/cmakedf
+  782  make -j4
+  783  sudo make install
+  784  sudo ldconfig
+  785  ls -l /usr/local/lib/python2.7/site-packages/
+  786  cd ~/.virtualenvs/cv/lib/python2.7/site-packages/
+  787  ln -s /usr/local/lib/python2.7/site-packages/cv2.so cv2.so
+  788  ls
+  789  cp /usr/local/lib/python2.7/site-packages/cv2.so cv2_backup.so
+  790  ls
+  791  rm cv2.so
+  792  ls /usr/local/lib/python2.7/site-packages/cv2.so
+  793  ln -s /usr/local/lib/python2.7/site-packages/cv2.so cv2.so
+  794  ls
+  795  python
+  796  home
+  797  bender
+  798  ls
+  799  echo "It looks like CV2 is working at this point"
+  800  echo "# history after installing cv2 successfully" >> cv2_install_history.txt
+  801  git add cv2_install_history.txt 
+  802  history | tail -200 } >> cv2_install_history.txt 
+  803  history | tail -200 | >> cv2_install_history.txt 
+  804  cat cv2_install_history.txt 
+  805  history | tail -200
+  806  history | tail -200 >> cv2_install_history.txt 

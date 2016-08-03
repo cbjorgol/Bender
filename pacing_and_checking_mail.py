@@ -1,14 +1,9 @@
-import imaplib
-import email
-import time
-from speak import speak
-from chuck_norris_jokes import say_chuck_norris_joke
-from cat_facts import say_cat_fact
-from robot_keys import account, password
-from weather import get_weather
-from BrickPi import *
+import subprocess
+import os
+import signal
 import numpy as np
-import sys
+
+from BrickPi import *
 
 
 def interpret_response(response_in):
@@ -70,9 +65,6 @@ def set_motor_speed(toggle_on, speed, diff):
 
 if __name__ == '__main__':
 
-    import subprocess
-    import os
-    import signal
 
     os.setpgrp()
     try:
@@ -105,7 +97,6 @@ if __name__ == '__main__':
         while True:
             
             set_motor_speed(toggle_on, speed, 2)
-            # print 'motors should be running now'
 
             touch = BrickPi.Sensor[PORT_2]            
             
@@ -127,19 +118,6 @@ if __name__ == '__main__':
                 for i in range(100):
                     BrickPiUpdateValues()
                     time.sleep(0.015)
-
-                # infrared = BrickPi.Sensor[PORT_1]
-                # button_value = interpret_response(infrared)
-                # button_vals = np.append(button_vals, button_value)
-                #if len(button_vals) > 3:
-                #     button_vals = button_vals[1:]
-
-                # print button_vals, infrared
-
-                # On / Off switch for speed
-                # if np.all(button_vals == 9):
-                #    on = 1 - on
-
 
             #BrickPiUpdateValues()
             time.sleep(.001)

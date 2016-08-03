@@ -47,4 +47,4 @@ def get_voltage():
             return False
             
 if __name__ == "__main__":
-    print get_voltage()
+    print(get_voltage())
