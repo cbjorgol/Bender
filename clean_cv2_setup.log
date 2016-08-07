@@ -1,0 +1,57 @@
+  135  sudo apt-get install vim
+  138  sudo apt-get update
+  140  sudo apt-get upgrade
+  142  sudo rpi-update
+reboot # rpi update needs a reboot
+  176  sudo apt-get install build-essential git cmake pkg-config
+  178  sudo apt-get install libjpeg8-dev libtiff4-dev libjasper-dev libpng12-dev
+# Note that I recieved the following error during install:
+-dev
+Reading package lists... Done
+Building dependency tree       
+Reading state information... Done
+Package libtiff4-dev is not available, but is referred to by another package.
+This may mean that the package is missing, has been obsoleted, or
+is only available from another source
+However the following packages replace it:
+  libtiff5-dev
+
+E: Package 'libtiff4-dev' has no installation candidate
+  184  sudo apt-get install libgtk2.0-dev
+  186  sudo apt-get install libatlas-base-dev gfortran
+  187  cd ~
+  188  git clone https://github.com/Itseez/opencv.git
+
+# Need to expand filesystem to make room for opencv
+    sudo raspi-config
+
+  218  cd opencv
+  219  git checkout 3.1.0
+  225  cd ..
+  227  git clone https://github.com/Itseez/opencv_contrib.git
+  230  cd opencv_contrib/
+  232  git checkout 3.1.0
+  234  sudo apt-get install python2.7-dev
+  237  wget https://bootstrap.pypa.io/get-pip.py
+  239  sudo python get-pip.py
+  242  sudo pip install numpy==1.9.2
+  245  cd ~/opencv
+  247  mkdir build
+  249  cd build
+# Its a good sign if you can see that it picked up your python library and associated libs here
+  275  sudo apt-get install cmake git libgtk2.0-dev pkg-config libavcodec-dev libavformat-dev libswscale-dev
+  293  sudo apt-get install libav-tools
+  306  sudo apt-get install libv4l-dev
+  221  sudo apt-get update
+  
+  # So I am not sure if I needed these lines that install and configure ffmpeg
+  # 223  wget http://ffmpeg.org/releases/ffmpeg-0.11.1.tar.bz2
+  # 224  tar xvf ffmpeg-0.11.1.tar.bz2
+  # 225  cd ffmpeg-0.11.1
+  # 234  ./configure --enable-shared --enable-pic
+  
+  # YOU NEED TO TURN OFF C EXAMPLES!!!
+  316  cmake -D CMAKE_BUILD_TYPE=RELEASE -D CMAKE_INSTALL_PREFIX=/usr/local -D INSTALL_C_EXAMPLES=OFF -D INSTALL_PYTHON_EXAMPLES=ON         -D OPENCV_EXTRA_MODULES_PATH=~/opencv_contrib/modules -D BUILD_EXAMPLES=ON ..
+  327  make -j4
+  330  sudo make install
+  332  sudo ldconfig
