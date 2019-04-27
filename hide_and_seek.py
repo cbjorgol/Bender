@@ -14,8 +14,8 @@ cap.set(cv2.CAP_PROP_FRAME_HEIGHT, 480);
 
 faceCascade = cv2.CascadeClassifier('/home/pi/opencv/data/haarcascades/haarcascade_frontalface_default.xml')
 
-hog = cv2.HOGDescriptor()
-hog.setSVMDetector(cv2.HOGDescriptor_getDefaultPeopleDetector())
+#hog = cv2.HOGDescriptor()
+#hog.setSVMDetector(cv2.HOGDescriptor_getDefaultPeopleDetector())
 
 
 BrickPiSetup()
@@ -78,23 +78,23 @@ while(cap.isOpened()):
         # Our operations on the frame come here
         gray = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
 
-        (rects, weights) = hog.detectMultiScale(image, winStride=(4, 4),
-                                                padding=(8, 8), scale=1.1)
-        #
-        # faces = faceCascade.detectMultiScale(
-        #     gray,
-        #     scaleFactor=1.2,
-        #     minNeighbors=3,
-        #     minSize=(3, 3),
-        #     flags = cv2.CASCADE_SCALE_IMAGE
-        # )
+        #(rects, weights) = hog.detectMultiScale(image, winStride=(4, 4),
+        #                                        padding=(8, 8), scale=1.1)
+        
+        faces = faceCascade.detectMultiScale(
+             gray,
+             scaleFactor=1.2,
+             minNeighbors=3,
+             minSize=(3, 3),
+             flags = cv2.CASCADE_SCALE_IMAGE
+        )
 
-        num_objects = len(rects)
+        num_objects = len(faces)
 
         if num_objects > 0:
 
             object_locs = []
-            for i, (x, y, w, h) in enumerate(rects):
+            for i, (x, y, w, h) in enumerate(faces):
                 left = x / float(width)
                 right = x / float(width)
                 w = w / float(width)
@@ -111,7 +111,7 @@ while(cap.isOpened()):
 
                 object_locs.append(object_location)
 
-            set_motor_speed(np.mean(object_locs), 250, 10)
+            # set_motor_speed(np.mean(object_locs), 250, 10)
             #print(face_locs)
             # cv2.rectangle(image, (x, 0), (x+w, 0+h), (0, 255, 0), 2)
 
@@ -135,7 +135,8 @@ while(cap.isOpened()):
             # weighted_to_mean = weight_face_hist(face_loc_hist)
             # set_motor_speed(weighted_to_mean, 250, 40)
         else:
-            set_motor_speed(0.5, 250, 10)
+            pass
+            #set_motor_speed(0.0, 250, 10)
         #     if len(face_loc_hist) == 0:
         #         set_motor_speed(0.5, 250, 40)
         #     else:
@@ -152,7 +153,7 @@ while(cap.isOpened()):
         #BrickPiUpdateValues()
 
         # Display the resulting frame
-        # cv2.imshow('frame',image)
+        cv2.imshow('frame',image)
         # out.write(image)
         if cv2.waitKey(1) & 0xFF == ord('q'):
             break

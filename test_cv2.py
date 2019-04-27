@@ -36,10 +36,10 @@ cap = cv2.VideoCapture(0)
 cap.set(cv2.CAP_PROP_FRAME_WIDTH, 640);
 cap.set(cv2.CAP_PROP_FRAME_HEIGHT, 480);
 
-# faceCascade = cv2.CascadeClassifier('/home/pi/opencv/data/haarcascades/haarcascade_frontalface_default.xml')
+faceCascade = cv2.CascadeClassifier('/home/pi/opencv/data/haarcascades/haarcascade_frontalface_default.xml')
 
-hog = cv2.HOGDescriptor()
-hog.setSVMDetector(cv2.HOGDescriptor_getDefaultPeopleDetector())
+# hog = cv2.HOGDescriptor()
+# hog.setSVMDetector(cv2.HOGDescriptor_getDefaultPeopleDetector())
 
 
 
@@ -106,7 +106,7 @@ while(cap.isOpened()):
         gray = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
 
         # gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
-        (faces, weights) = hog.detectMultiScale(gray, winStride=(4, 4),
+        # (faces, weights) = hog.detectMultiScale(gray, winStride=(4, 4),
                                                 padding=(8, 8), scale=1.05)
 
         # # draw the original bounding boxes
@@ -116,13 +116,13 @@ while(cap.isOpened()):
 
 
 
-        # faces = faceCascade.detectMultiScale(
-        #     gray,
-        #     scaleFactor=5.5,
-        #     minNeighbors=2,
-        #     minSize=(3, 3),
-        #     flags = cv2.CASCADE_SCALE_IMAGE
-        # )
+        faces = faceCascade.detectMultiScale(
+             gray,
+             scaleFactor=5.5,
+             minNeighbors=2,
+             minSize=(3, 3),
+             flags = cv2.CASCADE_SCALE_IMAGE
+        )
         faces_exist = len(faces) > 0
 
         # # Draw a rectangle around the faces
@@ -141,7 +141,7 @@ while(cap.isOpened()):
             #print(face_locs)
             # cv2.rectangle(image, (x, 0), (x+w, 0+h), (0, 255, 0), 2)
 
-            #cv2.rectangle(image, (x, y), (x+w, y+h), (0, 255, 0), 2)
+            cv2.rectangle(image, (x, y), (x+w, y+h), (0, 255, 0), 2)
                 #
                 # y = y - 3
                 # elapsed = time.time() - t0

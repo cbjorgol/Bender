@@ -10,8 +10,8 @@ from BaseHTTPServer import BaseHTTPRequestHandler,HTTPServer
 from SocketServer import ThreadingMixIn
 import StringIO
 import time
-capture=None
 import numpy as np
+
 
 from imutils.object_detection import non_max_suppression
 
@@ -87,7 +87,7 @@ class CamHandler(BaseHTTPRequestHandler):
             self.send_header('Content-type','text/html')
             self.end_headers()
             self.wfile.write('<html><head></head><body>')
-            self.wfile.write('<img src="http://10.0.0.244/:8084/cam.mjpg"/>')
+            self.wfile.write('<img src="http://172.20.10.7/8084/cam.mjpg"/>') #'<img src="http://10.0.0.244/:8084/cam.mjpg"/>')
             self.wfile.write('</body></html>')
             return
 
@@ -116,14 +116,19 @@ def main():
     capture.set(cv2.CAP_PROP_FRAME_WIDTH, 320);
     capture.set(cv2.CAP_PROP_FRAME_HEIGHT, 240);
     capture.set(cv2.CAP_PROP_SATURATION, 0.2);
+    
+    cv2.imshow('frame',image)
+    
+    #if cv2.waitKey(1) & 0xFF == ord('q'):
+      # break
     global img
-    try:
-        server = ThreadedHTTPServer(('10.0.0.244', 8084), CamHandler)
-        print "server started"
-        server.serve_forever()
-    except KeyboardInterrupt:
-        capture.release()
-        server.socket.close()
+    #try:
+       # server = ThreadedHTTPServer(('172.20.10.7', 8084), CamHandler)   # '10.0.0.244', 8084), CamHandler)
+      #  print "server started"
+   #     server.serve_forever()
+  #  except KeyboardInterrupt:
+  #      capture.release()
+    #    server.socket.close()
 
 if __name__ == '__main__':
     main()

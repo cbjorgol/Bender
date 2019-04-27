@@ -42,4 +42,4 @@ if __name__ == '__main__':
     if len(sys.argv) > 1:
         speak(message=sys.argv[1])
     else:
-        speak(message='hello, world')
+        speak(message='umm, get too work, we dont have all day')
