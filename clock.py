@@ -1,4 +1,4 @@
-from Tkinter import *
+from tkinter import *
 import time
 from datetime import datetime, timedelta
 import subprocess
@@ -20,7 +20,7 @@ else:
 lower_text = ' '
 
 color1 = "#%02x%02x%02x" % (124, 252, 0)
-color2 = "red" #"#228B22"
+color2 = "#ad1420" #"#228B22"
 
 root = Tk()
 

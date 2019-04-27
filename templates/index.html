@@ -1,0 +1,16 @@
+<title>Clock</title>
+<h1>Clock</h1>
+<p>{{ url_for('time_feed') }}</p>
+
+<p id="clock">Here will be date|time</p>
+
+<script>
+    var clock = document.getElementById("clock");
+
+    setInterval(() => {
+        fetch("{{ url_for('time_feed') }}")
+        .then(response => {
+                response.text().then(t => {clock.innerHTML = t})
+            });
+        }, 1000);
+</script>
