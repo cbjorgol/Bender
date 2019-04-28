@@ -28,8 +28,8 @@ Released   : 20131223
 <div id="header-wrapper">
 	<div id="header" class="container">
 		<div id="logo">
-			<h1><span class="icon icon-cog"></span><a href="#">DS+ Debt Clockss</a></h1>
-			<div id="menu">
+			<h1><span class="icon icon-cog"></span><a href="#">DS+ Opportunity Cost Clocks</a></h1>
+			<!--<div id="menu">-->
 				<!--<ul>-->
 					<!--<li class="current_page_item"><a href="#" accesskey="1" title="">Homepage</a></li>-->
 					<!--<li><a href="#" accesskey="2" title="">Our Clients</a></li>-->
@@ -37,14 +37,14 @@ Released   : 20131223
 					<!--<li><a href="#" accesskey="4" title="">Careers</a></li>-->
 					<!--<li><a href="#" accesskey="5" title="">Contact Us</a></li>-->
 				<!--</ul>-->
-			</div>
+			<!--</div>-->
 		</div>
 	</div>
 </div>
 <div id="page-wrapper">
 	<div id="page" class="container">
 		<div class="title">
-			<h2 >Opportunity Cost Clocks</h2>
+			<h2 >What is an Opportunity Cost Clock?</h2>
 		</div>
 
         <!--<h3 class="title">MSRM2 Opportunity Cost</h3>-->
@@ -70,32 +70,12 @@ Released   : 20131223
 			</div>
 
 
-<script>
-    var clock = document.getElementById("clock");
-
-    setInterval(() => {
-        fetch("{{ url_for('time_feed') }}")
-        .then(response => {
-                response.text().then(t => {clock.innerHTML = t})
-            });
-        }, 1000);
-
-
-    var clock2 = document.getElementById("clock2");
-
-    setInterval(() => {
-        fetch("{{ url_for('time_feed2') }}")
-        .then(response => {
-                response.text().then(t => {clock2.innerHTML = t})
-            });
-        }, 1000);
-</script>
 
 			<p>Proin eu wisi suscipit nulla suscipit interdum. Nullam non wisi a sem semper suscipit eleifend. Donec mattis libero eget urna. Duis  velit ac mauris.</p>
 			<a href="#" class="button">Learn More</a> </div>
 		<div id="tbox3">
 			<div class="title">
-				<h2>Praesent mauris</h2>
+				<h2 id="clock3">3Praesent mauris</h2>
 			</div>
 			<p>Donec mattis libero eget urna. Duis pretium velit ac mauris. Proin eu wisi suscipit nulla suscipit interdum. Nullam non wisi a sem suscipit  eleifend.</p>
 			<a href="#" class="button">Learn More</a> </div>
@@ -155,4 +135,35 @@ Released   : 20131223
 		</ul>
 </div>
 </body>
+
+<script>
+    var clock = document.getElementById("clock");
+
+    setInterval(() => {
+        fetch("{{ url_for('time_feed') }}")
+        .then(response => {
+                response.text().then(t => {clock.innerHTML = t})
+            });
+        }, 250);
+
+
+    var clock2 = document.getElementById("clock2");
+
+    setInterval(() => {
+        fetch("{{ url_for('time_feed2') }}")
+        .then(response => {
+                response.text().then(t => {clock2.innerHTML = t})
+            });
+        }, 250);
+
+
+    var clock3 = document.getElementById("clock3");
+
+    setInterval(() => {
+        fetch("{{ url_for('time_feed3') }}")
+        .then(response => {
+                response.text().then(t => {clock3.innerHTML = t})
+            });
+        }, 250);
+</script>
 </html>

@@ -18,6 +18,8 @@ def index():
 
 def get_value(npv_diff):
     npv_per_period = npv_diff / 365.
+
+    # This is the index date/time
     ref_date = datetime.now().replace(hour=0, minute=0, second=0, microsecond=0)
     multiplier = 1
     time_this_week = datetime.now() - ref_date
@@ -34,6 +36,12 @@ def time_feed():
 def time_feed2():
     def generate():
         yield get_value(NPV_DIFF*1.2)  # return also will work
+    return Response(generate(), mimetype='text')
+
+@app.route('/time_feed3')
+def time_feed3():
+    def generate():
+        yield get_value(NPV_DIFF*0.3) # return also will work
     return Response(generate(), mimetype='text')
 
 if __name__ == '__main__':
