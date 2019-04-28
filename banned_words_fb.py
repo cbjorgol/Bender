@@ -21,6 +21,8 @@ bad_words = [
     'butt',
     'buttplug',
     'clitoris',
+    'cocaine',
+    'coke',
     'cock',
     'coon',
     'crap',
