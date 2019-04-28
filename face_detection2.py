@@ -24,7 +24,7 @@ while (cap.isOpened()):
 
     if ret == True:
         re_colored = cv2.cvtColor(image, cv2.COLOR_RGB2BGR)
-        faces = face_cascade.detectMultiScale(re_colored, 1.3, 2, flags=cv2.CASCADE_SCALE_IMAGE)
+        faces = face_cascade.detectMultiScale(re_colored, scaleFactor=1.3, minNeighbors=2, flags=cv2.CASCADE_SCALE_IMAGE, outputRejectLevels=True)
         print("Humans Actively Monitored:", len(faces))
         for (x, y, w, h) in faces:
             cv2.rectangle(re_colored, (x, y), (x + w, y + h), (255, 255, 0), 2)
