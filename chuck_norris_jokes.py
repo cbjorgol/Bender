@@ -28,8 +28,7 @@ def say_chuck_norris_joke():
         print('....Actually, this joke has a swear, let me grab a different one....')
         say_chuck_norris_joke()
     else:
-        print("I have a {} related joke...   ".format(selected), end=' ')
-        print(chuck_norris_joke)
+        print("I have a {} related joke...   {}".format(selected, chuck_norris_joke))
         speak(chuck_norris_joke)
 
 if __name__ == '__main__':
