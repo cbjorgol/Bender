@@ -30,5 +30,11 @@ def time_feed():
         yield get_value(NPV_DIFF)  # return also will work
     return Response(generate(), mimetype='text')
 
+@app.route('/time_feed2')
+def time_feed2():
+    def generate():
+        yield get_value(NPV_DIFF*1.2)  # return also will work
+    return Response(generate(), mimetype='text')
+
 if __name__ == '__main__':
     app.run(debug=True, threaded=True)

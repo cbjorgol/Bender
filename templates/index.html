@@ -28,15 +28,15 @@ Released   : 20131223
 <div id="header-wrapper">
 	<div id="header" class="container">
 		<div id="logo">
-			<h1><span class="icon icon-cog"></span><a href="#">Cerulean</a></h1>
+			<h1><span class="icon icon-cog"></span><a href="#">DS+ Debt Clockss</a></h1>
 			<div id="menu">
-				<ul>
-					<li class="current_page_item"><a href="#" accesskey="1" title="">Homepage</a></li>
-					<li><a href="#" accesskey="2" title="">Our Clients</a></li>
-					<li><a href="#" accesskey="3" title="">About Us</a></li>
-					<li><a href="#" accesskey="4" title="">Careers</a></li>
-					<li><a href="#" accesskey="5" title="">Contact Us</a></li>
-				</ul>
+				<!--<ul>-->
+					<!--<li class="current_page_item"><a href="#" accesskey="1" title="">Homepage</a></li>-->
+					<!--<li><a href="#" accesskey="2" title="">Our Clients</a></li>-->
+					<!--<li><a href="#" accesskey="3" title="">About Us</a></li>-->
+					<!--<li><a href="#" accesskey="4" title="">Careers</a></li>-->
+					<!--<li><a href="#" accesskey="5" title="">Contact Us</a></li>-->
+				<!--</ul>-->
 			</div>
 		</div>
 	</div>
@@ -44,13 +44,30 @@ Released   : 20131223
 <div id="page-wrapper">
 	<div id="page" class="container">
 		<div class="title">
-			<h2>May MSRM2 Opportunity Cost</h2>
+			<h2 >Opportunity Cost Clocks</h2>
 		</div>
 
-        <p class="title" id="clock">Here will be date|time</p>
-		<p>This is <strong>Cerulean</strong>, a free, fully standards-compliant CSS template designed by <a href="http://templated.co" rel="nofollow">TEMPLATED</a>. The photos in this template are from <a href="http://fotogrph.com/"> Fotogrph</a>. This free template is released under the <a href="http://templated.co/license">Creative Commons Attribution</a> license, so you're pretty much free to do whatever you want with it (even use it commercially) provided you give us credit for it. Have fun :) </p>
+        <!--<h3 class="title">MSRM2 Opportunity Cost</h3>-->
+		<p>Every day we don't have our models in market we lose <strong>thousands</strong> of dollars.  These clocks help demonstrate how much money we've lost just this month.</p>
 	</div>
 </div>
+
+
+<div class="wrapper">
+	<div id="three-column" class="container">
+		<div><span class="arrow-down"></span></div>
+		<div id="tbox1">
+			<div class="title">
+				<h2 id="clock">Maecenas luctus2</h2>
+			</div>
+
+
+			<p><b>MSRM2 Opportunity Cost</b> We've lost this much money so far this month because we don't have our best MainSteet Acquisitions prototype in Market.</p>
+			<a href="#" class="button">Learn More</a> </div>
+		<div id="tbox2">
+			<div class="title">
+				<h2 id="clock2">Maecenas luctus3</h2>
+			</div>
 
 
 <script>
@@ -62,21 +79,18 @@ Released   : 20131223
                 response.text().then(t => {clock.innerHTML = t})
             });
         }, 1000);
+
+
+    var clock2 = document.getElementById("clock2");
+
+    setInterval(() => {
+        fetch("{{ url_for('time_feed2') }}")
+        .then(response => {
+                response.text().then(t => {clock2.innerHTML = t})
+            });
+        }, 1000);
 </script>
 
-<div class="wrapper">
-	<div id="three-column" class="container">
-		<div><span class="arrow-down"></span></div>
-		<div id="tbox1">
-			<div class="title">
-				<h2>Maecenas luctus</h2>
-			</div>
-			<p>Nullam non wisi a sem semper eleifend. Donec mattis libero eget urna. Duis pretium velit ac suscipit mauris. Proin eu wisi suscipit nulla suscipit interdum.</p>
-			<a href="#" class="button">Learn More</a> </div>
-		<div id="tbox2">
-			<div class="title">
-				<h2>Integer gravida</h2>
-			</div>
 			<p>Proin eu wisi suscipit nulla suscipit interdum. Nullam non wisi a sem semper suscipit eleifend. Donec mattis libero eget urna. Duis  velit ac mauris.</p>
 			<a href="#" class="button">Learn More</a> </div>
 		<div id="tbox3">
