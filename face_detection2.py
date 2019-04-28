@@ -10,6 +10,10 @@ import subprocess
 
 from imutils.object_detection import non_max_suppression
 
+MIN_FACES = 1
+MIN_TIME_TO_REFRESH = 10
+
+
 cap = cv2.VideoCapture(0)
 
 cap.set(cv2.CAP_PROP_FRAME_WIDTH, 680);
@@ -24,7 +28,7 @@ while (cap.isOpened()):
 
     if ret == True:
         re_colored = cv2.cvtColor(image, cv2.COLOR_RGB2BGR)
-        faces = face_cascade.detectMultiScale(re_colored, scaleFactor=1.3, minNeighbors=2, flags=cv2.CASCADE_SCALE_IMAGE, outputRejectLevels=True)
+        faces = face_cascade.detectMultiScale(re_colored, scaleFactor=1.3, minNeighbors=2, flags=cv2.CASCADE_SCALE_IMAGE)
         print("Humans Actively Monitored:", len(faces))
         for (x, y, w, h) in faces:
             cv2.rectangle(re_colored, (x, y), (x + w, y + h), (255, 255, 0), 2)
@@ -34,9 +38,9 @@ while (cap.isOpened()):
             return subprocess.Popen(['python', 'chuck_norris_jokes.py'])
 
 
-        if len(faces) > 1:
+        if len(faces) > MIN_FACES:
             time_since_update = time.time() - t0
-            if time_since_update > 20:
+            if time_since_update > MIN_TIME_TO_REFRESH:
                 t0 = time.time()
                 command()
 
