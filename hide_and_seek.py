@@ -41,17 +41,16 @@ def set_motor_speed(direction, max_speed, min_speed):
 
 
 #in this way it always works, because your get the right "size"
-# size = (int(cap.get(cv2.CAP_PROP_FRAME_WIDTH)),
-#         int(cap.get(cv2.CAP_PROP_FRAME_HEIGHT)))
+size = (int(cap.get(cv2.CAP_PROP_FRAME_WIDTH)),
+        int(cap.get(cv2.CAP_PROP_FRAME_HEIGHT)))
 # fourcc = cv2.cv.FOURCC('8', 'B', 'P', 'S')     #works, large
 
-# fourcc = cv2.VideoWriter_fourcc('m', 'p', '4', 'v')
-# out = cv2.VideoWriter('output.avi', fourcc, 2., size, True)
+fourcc = cv2.VideoWriter_fourcc('m', 'p', '4', 'v')
+out = cv2.VideoWriter('output.avi', fourcc, 2., size, True)
 
-# fourcc = cv2.VideoWriter_fourcc(*'mp4v')
-# cv2.CV_FOURCC('m', 'p', '4', 'v')
-#
-# out = cv2.VideoWriter('benerview.mp4', fourcc, 3.0, (640,480))
+#fourcc = cv2.VideoWriter_fourcc(*'mp4v')
+#cv2.CV_FOURCC('m', 'p', '4', 'v')
+#out = cv2.VideoWriter('benerview.mp4', fourcc, 3.0, (640,480))
 
 
 
