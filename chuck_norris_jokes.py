@@ -4,7 +4,7 @@ import random
 from speak import speak
 from banned_words_fb import bad_words
 
-BANNED_LIST = ['explicit', 'political', 'religion', 'history']  # (note that history had Nagasaki jokes....)]
+BANNED_LIST = ['explicit', 'political', 'religion', 'history']  # (note that history had some bad jokes....)]
 
 def say_chuck_norris_joke():
     raw_category_values = requests.get('https://api.chucknorris.io/jokes/categories')
@@ -28,8 +28,9 @@ def say_chuck_norris_joke():
         print('....Actually, this joke has a swear, let me grab a different one....')
         say_chuck_norris_joke()
     else:
-        print("I love parties!! I have a joke...   {}".format(chuck_norris_joke))
-        speak(chuck_norris_joke)
+        cn_joke = "I love parties!! I have a joke...   {}".format(chuck_norris_joke)
+        print(cn_joke)
+        speak(cn_joke)
 
 if __name__ == '__main__':
     say_chuck_norris_joke()
