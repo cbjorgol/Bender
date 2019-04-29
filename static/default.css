@@ -333,6 +333,16 @@
 		font-size: 3.5em;
 	}
 
+    #numb
+	{
+		font-size: 3.5em;
+	}
+
+    #big
+	{
+		font-size: 1.9em;
+	}
+
 	#logo a
 	{
 		text-decoration: none;
