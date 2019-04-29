@@ -8,9 +8,13 @@ import time
 app = Flask(__name__)
 
 
-NPV_DIFF = 80000000
+NPV_DIFF1 = 80000000
+NPV_DIFF2 = 65000000
+NPV_DIFF3 = 27000000
 FREQ = "Today's"
-REF_DATE = datetime(2019, 1, 1, 0, 0)
+REF_DATE1 = datetime(2019, 1, 1, 0, 0)
+REF_DATE2 = datetime(2019, 4, 1, 0, 0)
+REF_DATE3 = None
 
 @app.route('/')
 def index():
@@ -30,19 +34,19 @@ def get_value(npv_diff, ref_date=None):
 @app.route('/time_feed')
 def time_feed():
     def generate():
-        yield get_value(NPV_DIFF, ref_date=REF_DATE)  # return also will work
+        yield get_value(NPV_DIFF1, ref_date=REF_DATE1)  # return also will work
     return Response(generate(), mimetype='text')
 
 @app.route('/time_feed2')
 def time_feed2():
     def generate():
-        yield get_value(NPV_DIFF*1.2, ref_date=REF_DATE)  # return also will work
+        yield get_value(NPV_DIFF2, ref_date=REF_DATE2)  # return also will work
     return Response(generate(), mimetype='text')
 
 @app.route('/time_feed3')
 def time_feed3():
     def generate():
-        yield get_value(NPV_DIFF*0.2, ref_date=REF_DATE) # return also will work
+        yield get_value(NPV_DIFF3, ref_date=REF_DATE3) # return also will work
     return Response(generate(), mimetype='text')
 
 if __name__ == '__main__':

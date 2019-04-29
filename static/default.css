@@ -52,6 +52,13 @@
 	}
 
 
+
+
+
+
+
+
+
 	.container
 	{
 		margin: 0px auto;
@@ -196,7 +203,24 @@
 		margin: 0 auto;
 		width: auto;
 	}
+    .numb
+	{
+		font-size: 3.5em;
+	}
 
+    .big
+	{
+		font-size: 1.9em;
+		padding: 0.0001em 0.001em;
+         margin-bottom: 0em;
+	}
+
+    .medium
+	{
+		font-size: 1.1em;
+		padding: 0.0001em 0.001em;
+         margin-bottom: 0em;
+	}
 /*********************************************************************************/
 /* List Styles                                                                   */
 /*********************************************************************************/
@@ -333,15 +357,6 @@
 		font-size: 3.5em;
 	}
 
-    #numb
-	{
-		font-size: 3.5em;
-	}
-
-    #big
-	{
-		font-size: 1.9em;
-	}
 
 	#logo a
 	{
