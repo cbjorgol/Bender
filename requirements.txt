@@ -1,7 +1,7 @@
 Adafruit-DHT==1.2.0
 BrickPi==0.0.0
 GoPiGo==0.0.0
-Pillow==2.6.1
+Pillow==9.0.0
 RPi.GPIO==0.6.2
 RTIMULib==7.2.1
 SpeechRecognition==3.4.6
