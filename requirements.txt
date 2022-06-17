@@ -13,7 +13,7 @@ grovepi==0.0.0
 html5lib==0.999
 lxkeymap==0.1
 ndg-httpsclient==0.3.2
-numpy==1.8.2
+numpy==1.21.0
 pexpect==3.2
 picamera==1.11
 pifacecommon==4.2.1
