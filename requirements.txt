@@ -26,7 +26,7 @@ pygame==1.9.2a0
 pygobject==3.14.0
 pyserial==2.6
 python-lirc==1.2.1
-reportlab==3.1.8
+reportlab==3.5.55
 requests==2.4.3
 scratchpy==0.1.0
 sense-hat==2.1.0
